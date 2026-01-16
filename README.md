@@ -1,4 +1,4 @@
-# Draf Take Home Test Departemen Robotics Software Control Aksantara ITB 2026
+# Take Home Test Departemen Robotics Software Control Aksantara ITB 2026
 
 ## Ketentuan Umum
 
