@@ -184,9 +184,9 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
 2. (5 poin) Jelaskan konsep Real-Time Operating System (RTOS) dan mengapa RTOS penting dalam pengembangan sistem UAV.
 3. (5 poin) Jelaskan konsep dasar komunikasi serial (UART, SPI, I2C) dan bagaimana protokol-protokol ini digunakan dalam sistem UAV untuk berkomunikasi antara berbagai komponen.
 
-#### Jurusan Control and Perception (ConCept)
+#### Jurusan Control and Perception (ConCept) (75 poin)
 
-1. (10 poin) **Robot Operating System (ROS)** adalah seperangkat pustaka (*library*) dan alat yang digunakan para *developer* robot dan UAV. Saat ini, versi ROS yang digunakan di RSC Aksantara ITB adalah [ROS2 Humble](https://docs.ros.org/en/humble/). Jelaskan konsep-konsep dasar pada ROS berikut sesuai bahasa Anda sendiri dan **analoginya** dengan konsep yang Anda familiar:
+1. (5 poin) **Robot Operating System (ROS)** adalah seperangkat pustaka (*library*) dan alat yang digunakan para *developer* robot dan UAV. Saat ini, versi ROS yang digunakan di RSC Aksantara ITB adalah [ROS2 Humble](https://docs.ros.org/en/humble/). Jelaskan konsep-konsep dasar pada ROS berikut sesuai bahasa Anda sendiri dan **analoginya** dengan konsep yang Anda familiar:
     * *Nodes*
     * *Topics*
     * *Services*
@@ -199,18 +199,18 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
     * Topic bernama `time` dan berisi tanggal dan waktu sesuai format [ISO 8601](https://www.loc.gov/standards/datetime/iso-tc154-wg5_n0038_iso_wd_8601-1_2016-02-16.pdf) di saat message dipublish.
     * Lampirkan seluruh workspace (tanpa file hasil build) pada repositori.
 
-3. (20 poin) Buatlah [sistem service dan client dalam C++](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Service-And-Client.html) dengan meng-_extend_ package yang sudah dibuat pada soal sebelumnya dengan ketentuan sebagai berikut:
+3. (15 poin) Buatlah [sistem service dan client dalam C++](https://docs.ros.org/en/humble/Tutorials/Beginner-Client-Libraries/Writing-A-Simple-Cpp-Service-And-Client.html) dengan meng-_extend_ package yang sudah dibuat pada soal sebelumnya dengan ketentuan sebagai berikut:
     * Tambahkan service bernama `duration` pada node `clock` yang menerima argumen berikut:
         * `start_time` berisi tanggal dan waktu awal dalam format ISO 8601.
         * `end_time` berisi tanggal dan waktu akhir dalam format ISO 8601.
-    * Sesuai namanya, service tersebut akan mempublish selisih durasi dengan format berikut:
-        * Secara normal, publish durasi dengan format ISO 8601 sesuai ketentuan Anda.
-        * Apabila `start_time` lebih akhir daripada `end_time`, `throw` error yang sesuai dan publish messagenya sesuai ketentuan Anda.
+    * Sesuai namanya, service tersebut akan mengirim response durasi antara kedua waktu dengan format berikut:
+        * Secara normal, kirim response durasi dengan format ISO 8601 sesuai ketentuan Anda.
+        * Apabila `start_time` lebih akhir daripada `end_time`, `throw` error yang sesuai, lalu handle sesuai ketentuan Anda.
     * Buatlah sebuah node baru bernama `user` yang dapat memanggil service tersebut. Ketika node dijalankan, program akan membaca dari `stdin` waktu awal dan akhir dan node akan mengeprint time dari node service.
     * Lampirkan seluruh workspace (tanpa file hasil build) pada repositori.
 
 > [!NOTE]
-> Pilihlah jenis format tanggal/waktu ISO yang sesuai dengan kebutuhan Anda (**bebas**). Jelaskan dalam dokumentasi kode mengapa Anda memilih format tersebut. 
+> Jenis format tanggal/waktu ISO yang dipilih adalah **bebas** sesuai dengan kebutuhan Anda. Jelaskan dalam dokumentasi kode mengapa Anda memilih format tersebut. 
 
 
 4. (10 poin) **Pinhole Camera Model** merupakan salah satu model kamera yang praktis dan sering digunakan dalam *Computer Vision*. Salah satu buku *legend* Computer Vision adalah ***Computer Vision: A Modern Approach*** oleh David A. Forsyth dan Jean Ponce. Carilah buku tersebut di internet dan pelajari untuk menjawab soal-soal berikut.
@@ -225,7 +225,7 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
 > [!TIP]  
 > Beberapa materi yang di bahas pada soal-soal ini mungkin memerlukan latar belakang Aljabar Linier atau Aljabar Geometri. Coba sambil pelajari untuk memperkuat pemahaman Anda.
 
-5. (15 poin) **OpenCV** merupakan *library computer vision* paling lengkap di dunia. Dokumentasi utama OpenCV dapat dilihat di [https://opencv.org/](https://opencv.org/). Selain itu, terdapat juga buku ***Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library (2017)*** oleh Adrian Kaehler dan Gary Bradski. Seperti soal sebelumnya, carilah buku tersebut atau lihat dokumentasinya secara langsung dan coba kerjakan beberapa soal-soal berikut.
+5. (10 poin) **OpenCV** merupakan *library computer vision* paling lengkap di dunia. Dokumentasi utama OpenCV dapat dilihat di [https://opencv.org/](https://opencv.org/). Selain itu, terdapat juga buku ***Learning OpenCV 3: Computer Vision in C++ with the OpenCV Library (2017)*** oleh Adrian Kaehler dan Gary Bradski. Seperti soal sebelumnya, carilah buku tersebut atau lihat dokumentasinya secara langsung dan coba kerjakan beberapa soal-soal berikut.
     * Download dan install OpenCV C++ pada perangkat Anda.
     * Muat sebuah gambar bebas (meme pun boleh 🥀 asal ga berbau SARA) dengan `cv::mat`
     * Edit gambar tersebut dengan mengaplikasikan transformasi apa pun sekreatif mungkin.
@@ -239,7 +239,7 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
     * Lampirkan kode sumber dan video hasil deteksi dalam repositori.
 
 
-#### Jurusan Ground Control Station (GCS)
+#### Jurusan Ground Control Station (GCS) (55 poin)
 
 1. (6 poin) **MAVLink** adalah protokol komunikasi ringan yang digunakan dalam sistem UAV untuk mengirim dan menerima data antara berbagai komponen, seperti antara UAV dan *ground control station* (GCS). Jelaskan konsep dasar MAVLink berikut sesuai bahasa Anda sendiri:
     * Struktur pesan MAVLink
