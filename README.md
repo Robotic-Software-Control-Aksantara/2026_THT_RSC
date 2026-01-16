@@ -62,8 +62,8 @@
 
 ### Teknis Pengumpulan
 
-* Kumpulkan tautan repositori GitHub Anda pada [tautan ini](#). Pastikan repositori  [bersifat publik](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility) pada saat pengumpulan.
-* Batas waktu pengumpulan THT adalah **INSERT DATE HERE :3** pukul **INSERT TIME HERE :3**.
+* Kumpulkan tautan repositori GitHub Anda sesuai teknis yang diberikan pada dokumen PDF THT. Pastikan repositori [bersifat publik](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#changing-a-repositorys-visibility) pada saat pengumpulan.
+* Batas waktu pengumpulan THT adalah **22 Januari 2026** pukul **23:59 WIB**.
 * Anda dapat terus melakukan commit dan push di repositori THT meski waktu pengumpulan sudah berakhir, namun tim korektor hanya akan menilai berdasarkan commit terakhir sebelum tenggat waktu.
 * Apabila terdapat pertanyaan selama proses pengerjaan THT, ajukan pertanyaan seputar THT ini melalui [sheets QnA](https://s.hmif.dev/QnA_THT).
 
