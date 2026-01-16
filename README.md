@@ -28,24 +28,23 @@
 │   ├─── jawaban-a.md
 │   ├─── jawaban-b.md
 │   └─── progres.md           # log progres pengerjaan
-├─── assets                   # menampung gambar untuk bagian A
-│   ├─── arsitektur.jpg
-│   └─── diagram-a1.png
-│   # ... dan seterusnnya
-└─── src                      # menampung kode dan gambar untuk bagian B per soal
-   ├─── soal-1                # folder soal 1
-   │   ├─── kode.py           # kode soal 1
-   │   └─── screenshots       # semua gambar screenshot untuk soal 1
-   │       ├─── ss_1.png
-   │       ├─── ss_2.png
-   │       └─── ss_3.png
-   └─── soal-2                # folder soal 2
-      └─── kode.cpp           # kode soal 2
-   # ... dan seterusnya
+│ 
+├── lampiran                 
+└── src
+    ├── a                     # untuk file pendukung jawaban bagian A
+    │   ├── 1                 # no 1
+    │   ├── ...               # ... dst              
+    │   └── 6
+    └── b                     # untuk file pendukung jawaban bagian B
+        ├── daspro            # dasar pemrograman
+        ├── firmware          # firmware & sistem benam
+        ├── concept           # control & perception
+        └── gcs               # ground control station
 ```
 
 > [!NOTE]  
-> Struktur di atas hanyalah contoh, Anda bebas membuat atau menggunakan struktur lain dengan nama file dan folder bebas asal rapi, jelas, dan mudah dipahami.
+> Strukturnya sudah kami bikinkan, jangan lupa hapus file .gitkeep-nya ya :)
+> Sesuaikan dengan kebutuhan, tidak harus persis sama seperti di atas.
 
 * Lakukan commit secara berkala (misal setiap kali menyelesaikan satu soal/subsoal) dengan [pesan commit yang deskriptif](https://www.conventionalcommits.org/en/v1.0.0/).
 
@@ -141,7 +140,7 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
 
 #### Dasar Pemrograman (55 poin)
 
-1. (25 poin) **Pemrograman berorientasi objek** (*Object Oriented Programming* atau OOP) adalah paradigma pemrograman yang menggunakan objek untuk merepresentasikan data dan perilaku dalam sebuah program. 
+1. (25 poin) **Pemrograman berorientasi objek** (*Object Oriented Programming* atau OOP) adalah paradigma pemrograman yang menggunakan objek untuk merepresentasikan data dan perilaku dalam sebuah program.
    <ol type="a">
       <li> (9 poin) Jelaskan konsep-konsep dasar OOP berikut dan berikan contoh singkat dalam bahasa C++: <i>class</i>, <i>object</i>, <i>abstraction</i>, <i>encapsulation</i>, <i>inheritance</i>, dan <i>polymorphism</i>.
       <li> (16 poin) Perhatikan file <a href="/lampiran/telemetry_processor.cpp"><code>telemetry_processor.cpp</code></a> dan data di <a href="/lampiran/telemetry_data.txt"><code>telemetry_data.txt</code></a>. Kode tersebut adalah implementasi prosedural untuk memproses data telemetri UAV. Silakan <i>refactor</i> kode tersebut menjadi implementasi berorientasi objek (OOP) dengan membuat kelas yang sesuai. Selain itu, pelajari salah satu <a href="https://refactoring.guru/design-patterns">design pattern</a> sederhana (misalnya, Factory, Observer, atau Strategy) dan terapkan dalam refactor tersebut. Jelaskan <i>design pattern</i> yang Anda gunakan dan mengapa cocok untuk kasus ini. Lampirkan kode hasil <i>refactor</i> sebagai jawaban.
@@ -158,7 +157,7 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
       <li> Perbedaan <code>std::unique_ptr</code> dan <code>std::shared_ptr</code>
    </ol>
 
-3. (10 poin) Multithreading adalah kemampuan sebuah program untuk menjalankan beberapa bagian kode secara bersamaan. 
+3. (10 poin) Multithreading adalah kemampuan sebuah program untuk menjalankan beberapa bagian kode secara bersamaan.
    <ol type="a">
       <li> (4 poin) Jelaskan konsep dasar <i>multithreading</i>.
       <li> (6 poin) Salah satu contoh kasus penggunaan <i>multithreading</i> adalah ketika GCS harus memproses data telemetri dari UAV dan stream video dari kamera secara bersamaan. Kita akan mencoba mengimplementasikan sebuah program Python/C++ sederhana yang menggunakan <i>multithreading</i> untuk mensimulasikan kasus tersebut. Namun, karena kasus semacam itu cukup rumit dan susah disimulasikan, kali ini kita akan mencoba contoh yang lebih sederhana. Program harus memiliki dua thread dengan rincian sebagai berikut:
@@ -212,8 +211,7 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
 > [!NOTE]
 > Jenis format tanggal/waktu ISO yang dipilih adalah **bebas** sesuai dengan kebutuhan Anda. Jelaskan dalam dokumentasi kode mengapa Anda memilih format tersebut. 
 
-
-4. (10 poin) **Pinhole Camera Model** merupakan salah satu model kamera yang praktis dan sering digunakan dalam *Computer Vision*. Salah satu buku *legend* Computer Vision adalah ***Computer Vision: A Modern Approach*** oleh David A. Forsyth dan Jean Ponce. Carilah buku tersebut di internet dan pelajari untuk menjawab soal-soal berikut.
+1. (10 poin) **Pinhole Camera Model** merupakan salah satu model kamera yang praktis dan sering digunakan dalam *Computer Vision*. Salah satu buku *legend* Computer Vision adalah ***Computer Vision: A Modern Approach*** oleh David A. Forsyth dan Jean Ponce. Carilah buku tersebut di internet dan pelajari untuk menjawab soal-soal berikut.
    <ol type="a">
     <li> Apa itu konsep Pinhole Camera Model? Gambarkan (<b>dengan tulisan tangan</b>) diagram cara kerjanya!
     <li> Apa itu <i>homogeneous coordinates</i> dan <i>rigid transformation</i>? Tuliskan persamaannya!
@@ -231,10 +229,10 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
     * Edit gambar tersebut dengan mengaplikasikan transformasi apa pun sekreatif mungkin.
     * Lampirkan kode sumber beserta gambar sebelum dan sesudah transformasi.
 
-6. (20 poin) Perhatikan video [circle.mp4](lampiran/circle.mp4). Muat video tersebut di OpenCV, lalu parse setiap frame menjadi gambar. Selanjutnya, lakukan _*tracking*_ lingkaran tersebut dengan langkah-langkah berikut:
-    * Lakukan _*masking*_ (memisahkan data relevan dan tidak relevan) untuk warna lingkaran yang akan dilacak
-    * Buatlah _*contours*_ (outline/batas objek) lingkaran dari hasil masking.
-    * Gambarkan _*bounding box*_ di batas-batas objek yang terdeteksi untuk setiap frame.
+2. (20 poin) Perhatikan video [circle.mp4](lampiran/circle.mp4). Muat video tersebut di OpenCV, lalu parse setiap frame menjadi gambar. Selanjutnya, lakukan **tracking** lingkaran tersebut dengan langkah-langkah berikut:
+    * Lakukan **masking** (memisahkan data relevan dan tidak relevan) untuk warna lingkaran yang akan dilacak
+    * Buatlah **contours** (outline/batas objek) lingkaran dari hasil masking.
+    * Gambarkan **bounding box** di batas-batas objek yang terdeteksi untuk setiap frame.
     * Dokumentasikan hasil deteksi objek dengan screen recorder, atau output hasilnya ke video baru.
     * Lampirkan kode sumber dan video hasil deteksi dalam repositori.
 
@@ -274,51 +272,61 @@ Jelaskan cara kerja algoritma-algoritma di bawah ini beserta kapan dan di mana a
 ## Referensi
 
 ### Git dan Version Control
+
 - [Dokumentasi Git](https://docs.github.com/en/get-started/git-basics)
-- [Learn Git Branching](https://learngitbranching.js.org)
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+* [Learn Git Branching](https://learngitbranching.js.org)
+* [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 ### Bahasa Pemrograman
+
 - [Tutorial C++](https://cplusplus.com/doc/tutorial/)
-- [Python Documentation](https://docs.python.org/3/)
-- [C++ Reference](https://en.cppreference.com/w/)
+* [Python Documentation](https://docs.python.org/3/)
+* [C++ Reference](https://en.cppreference.com/w/)
 
 ### ROS dan Robotics
+
 - [ROS2 Humble Documentation](https://docs.ros.org/en/humble/)
-- [ROS2 Tutorials](https://docs.ros.org/en/humble/Tutorials.html)
+* [ROS2 Tutorials](https://docs.ros.org/en/humble/Tutorials.html)
 
 ### Computer Vision
+
 - [OpenCV Documentation](https://docs.opencv.org/)
-- [Learning OpenCV](https://opencv.org/books/)
-- [Computer Vision: A Modern Approach - Forsyth & Ponce](https://eclass.hmu.gr/modules/document/file.php/TM152/Books/Computer%20Vision%20-%20A%20Modern%20Approach%20-%20D.%20Forsyth%2C%20J.%20Ponce.pdf)
+* [Learning OpenCV](https://opencv.org/books/)
+* [Computer Vision: A Modern Approach - Forsyth & Ponce](https://eclass.hmu.gr/modules/document/file.php/TM152/Books/Computer%20Vision%20-%20A%20Modern%20Approach%20-%20D.%20Forsyth%2C%20J.%20Ponce.pdf)
 
 ### UAV dan GCS
+
 - [MAVLink Protocol](https://mavlink.io/en/)
-- [ArduPilot Documentation](https://ardupilot.org/ardupilot/)
-- [PX4 User Guide](https://docs.px4.io/main/en/)
-- [Mission Planner Documentation](https://ardupilot.org/planner/)
-- [QGroundControl User Guide](https://docs.qgroundcontrol.com/master/en/)
+* [ArduPilot Documentation](https://ardupilot.org/ardupilot/)
+* [PX4 User Guide](https://docs.px4.io/main/en/)
+* [Mission Planner Documentation](https://ardupilot.org/planner/)
+* [QGroundControl User Guide](https://docs.qgroundcontrol.com/master/en/)
 
 ### Web Development
+
 - [Flask Documentation](https://flask.palletsprojects.com/)
-- [FastAPI Documentation](https://fastapi.tiangolo.com/)
-- [React Documentation](https://react.dev/)
-- [Svelte Documentation](https://svelte.dev/)
+* [FastAPI Documentation](https://fastapi.tiangolo.com/)
+* [React Documentation](https://react.dev/)
+* [Svelte Documentation](https://svelte.dev/)
 
 ### DevOps dan Containerization
+
 - [Docker Documentation](https://docs.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
+* [Docker Compose](https://docs.docker.com/compose/)
 
 ### Design Patterns
+
 - [Refactoring Guru - Design Patterns](https://refactoring.guru/design-patterns)
-- [Gang of Four Design Patterns](https://springframework.guru/gang-of-four-design-patterns/)
+* [Gang of Four Design Patterns](https://springframework.guru/gang-of-four-design-patterns/)
 
 ### Algoritma
+
 - [Introduction to A* Pathfinding](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
-- [PID Control - Wikipedia](https://en.wikipedia.org/wiki/PID_controller)
-- [Kalman Filter Tutorial](https://www.kalmanfilter.net/)
+* [PID Control - Wikipedia](https://en.wikipedia.org/wiki/PID_controller)
+* [Kalman Filter Tutorial](https://www.kalmanfilter.net/)
 
 ### Lain-lain
+
 - [Markdown Tutorial](https://www.markdowntutorial.com/)
 - [ISO 8601 Date and Time Format](https://www.iso.org/iso-8601-date-and-time-format.html)
 - [Doxygen Documentation](https://www.doxygen.nl/manual/)
